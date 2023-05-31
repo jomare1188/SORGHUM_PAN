@@ -21,6 +21,7 @@ The project directory has the following structure:
 
 - R version 4.3.0
 - Packages required: dplyr, tidyr, ggplot2, viridis, wesanderson, jsonlite, ggrepel
+- There is avaiable the busco_plots.yml file with specifications for a conda envirorment to run this
 
 ## Input
 
