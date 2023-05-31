@@ -1,0 +1,15 @@
+{
+    "parameters": {
+	"out": "MyAssembly_keller/8_busco/My_Assembly_keller_k25_and_k31_busco"
+    },
+    "results": {
+        "one_line_summary": "C:99.1%[S:9.0%,D:90.1%],F:0.2%,M:0.7%,n:1614",
+        "Complete": 99.1,
+        "Single copy": 9.0,
+        "Multi copy": 90.1,
+        "Fragmented": 0.2,
+        "Missing": 0.7,
+        "n_markers": 1614,
+        "domain": "eukaryota"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "parameters": {
+	"out": "MyAssembly_S085/8_busco/My_Assembly_S085_k25_and_k31_busco"
+    },
+    "results": {
+        "one_line_summary": "C:83.2%[S:40.0%,D:43.2%],F:7.9%,M:8.9%,n:1614",
+        "Complete": 83.2,
+        "Single copy": 40.0,
+        "Multi copy": 43.2,
+        "Fragmented": 7.9,
+        "Missing": 8.9,
+        "n_markers": 1614,
+        "domain": "eukaryota"
+    }
+}

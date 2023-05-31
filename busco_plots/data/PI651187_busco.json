@@ -1,0 +1,15 @@
+{
+    "parameters": {
+	"out": "MyAssembly_PI651187/8_busco/My_Assembly_PI651187_k25_and_k31_busco"
+    },
+    "results": {
+        "one_line_summary": "C:0.1%[S:0.1%,D:0.0%],F:1.1%,M:98.8%,n:1614",
+        "Complete": 0.1,
+        "Single copy": 0.1,
+        "Multi copy": 0.0,
+        "Fragmented": 1.1,
+        "Missing": 98.8,
+        "n_markers": 1614,
+        "domain": "eukaryota"
+    }
+}

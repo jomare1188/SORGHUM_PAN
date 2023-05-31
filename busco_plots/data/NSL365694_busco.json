@@ -1,0 +1,15 @@
+{
+    "parameters": {
+	"out": "MyAssembly_NSL365694/8_busco/My_Assembly_NSL365694_k25_and_k31_busco"
+    },
+    "results": {
+        "one_line_summary": "C:0.0%[S:0.0%,D:0.0%],F:0.7%,M:99.3%,n:1614",
+        "Complete": 0,
+        "Single copy": 0,
+        "Multi copy": 0,
+        "Fragmented": 0.7,
+        "Missing": 99.3,
+        "n_markers": 1614,
+        "domain": "eukaryota"
+    }
+}
