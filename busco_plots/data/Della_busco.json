@@ -1,0 +1,52 @@
+{
+    "parameters": {
+        "out_path": "/data/j/TRANSCRIPTOMATOR",
+        "cpu": "40",
+        "force": "False",
+        "restart": "False",
+        "quiet": "False",
+        "download_path": "/data/j/TRANSCRIPTOMATOR/busco_downloads",
+        "datasets_version": "odb10",
+        "offline": "False",
+        "download_base_url": "https://busco-data.ezlab.org/v5/data/",
+        "auto-lineage": "False",
+        "auto-lineage-prok": "False",
+        "auto-lineage-euk": "False",
+        "update-data": "False",
+        "use_augustus": "False",
+        "batch_mode": "False",
+        "tar": "False",
+        "in": "/data/j/TRANSCRIPTOMATOR/MyAssembly_Della/7_trinity_assembly/MyAssembly_Della_trinity_k25_and_k31.Trinity.merged.final.fasta",
+        "out": "MyAssembly_Della/8_busco/My_Assembly_Della_k25_and_k31_busco",
+        "mode": "euk_tran",
+        "lineage_dataset": "/data/j/TRANSCRIPTOMATOR/dbs/busco_db/embryophyta_odb10",
+        "main_out": "/data/j/TRANSCRIPTOMATOR/MyAssembly_Della/8_busco/My_Assembly_Della_k25_and_k31_busco",
+        "lineage_results_dir": "run_embryophyta_odb10",
+        "domain": "eukaryota",
+        "max_intron": "90000",
+        "max_seq_len": "120000",
+        "metaeuk_parameters": "",
+        "metaeuk_rerun_parameters": ""
+    },
+    "lineage_dataset": {
+        "name": "embryophyta_odb10",
+        "creation_date": "2020-09-10",
+        "number_of_buscos": "1614",
+        "number_of_species": "50"
+    },
+    "versions": {
+        "hmmsearch": 3.1,
+        "metaeuk": "6.a5d39d9",
+        "busco": "5.4.4"
+    },
+    "results": {
+        "one_line_summary": "C:99.1%[S:5.8%,D:93.3%],F:0.4%,M:0.5%,n:1614",
+        "Complete": 99.1,
+        "Single copy": 5.8,
+        "Multi copy": 93.3,
+        "Fragmented": 0.4,
+        "Missing": 0.5,
+        "n_markers": 1614,
+        "domain": "eukaryota"
+    }
+}
