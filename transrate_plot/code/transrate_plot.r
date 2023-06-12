@@ -39,7 +39,7 @@ is_outlier <- function(x) {
 }
 
 # Pivot data: transform matrix to a 3 column table
-pivoted_data <- result %>% pivot_longer(-c(genotype), names_to = "Statistic", values_to = "percentage") %>% group_by(Statistic) %>% mutate(outlier = if_else(is_outlier(percentage), genotype, NA_character_))
+pivoted_data <- result %>% pivot_longer(-c(genotype), names_to = "Metric", values_to = "percentage") %>% group_by(Metric) %>% mutate(outlier = if_else(is_outlier(percentage), genotype, NA_character_))
 
 
 # Define colores using wesanderson movie colors
@@ -49,10 +49,10 @@ colors = wesanderson::wes_palettes$Darjeeling1
 dir.create("/home/j/SORGHUM_PAN/transrate_plot/results")
 
 # make boxplot
-ggplot(pivoted_data, aes( x = Statistic, y = percentage, fill = Statistic)) +
+ggplot(pivoted_data, aes( x = Metric, y = percentage, fill = Metric)) +
   geom_boxplot(outlier.color = "black", outlier.size = 2, lwd=0.8, colour = "black", )+
   geom_text_repel(aes(label = outlier)) +
-  labs(title="Transrate",x="Metric", y = "Percentage")+
+  labs(title="Transrate",x="", y = "Percentage")+
   scale_fill_manual(values = colors[c(1,2)]) +
   theme_bw() +
   theme( text = element_text(size=20, colour = "black"),
