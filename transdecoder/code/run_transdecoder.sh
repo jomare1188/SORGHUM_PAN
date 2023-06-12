@@ -1,7 +1,7 @@
 #PBS -q par16
 #PBS -l nodes=1:ppn=16
 
-cd $PBS_O_WORKDIR
+#cd $PBS_O_WORKDIR
 conda activate TRANSDECODER
 
 ls ./../../assemblies/ | grep .fasta > ./../../assemblies/transcriptomes_list
@@ -14,4 +14,4 @@ do
 	echo TransDecoder.LongOrfs -S -t ./../../assemblies/$i --output_dir ./../results/$GENOTYPE >> transdecoder_commands
 done
 
-cat transdecoder_commands | parallel -j16
+cat transdecoder_commands | parallel -j48
