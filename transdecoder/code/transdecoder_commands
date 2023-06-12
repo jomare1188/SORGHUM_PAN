@@ -1,5 +1,7 @@
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_BAZ9504_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/BAZ9504
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_BTx623_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/BTx623
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_cv.BRS330_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/cv.BRS330
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Della_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Della
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_DKS-3707_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/DKS-3707
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_DKS-4420_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/DKS-4420
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_keller_trinity_k25.Trinity_gt301bp.fasta --output_dir ./../results/keller
@@ -8,10 +10,14 @@ TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Mota_Maradi_trinity_k2
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_NSL365694_trinity_k25.Trinity_gt301bp.fasta --output_dir ./../results/NSL365694
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_PI651187_trinity_k25_and_k31.Trinity.merged.final_gt301bp.fasta --output_dir ./../results/PI651187
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_R9188_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/R9188
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Rioref_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Rioref
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Rio_trinity_k25_and_k31.Trinity.merged.final_gt301bp.fasta --output_dir ./../results/Rio
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_RTx430_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/RTx430
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_S085_trinity_k25_and_k31.Trinity.merged.final_gt301bp.fasta --output_dir ./../results/S085
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_SM100_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/SM100
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_TAM428_trinity_k25.Trinity_gt301bp.fasta --output_dir ./../results/TAM428
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_TEST_trinity_k25.Trinity_gt301bp.fasta --output_dir ./../results/TEST
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Tx2737_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Tx2737
+TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Tx3362_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Tx3362
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Tx378_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Tx378
 TransDecoder.LongOrfs -S -t ./../../assemblies/MyAssembly_Tx7000_trinity_k25_and_k31.Trinity.merged.final.fasta --output_dir ./../results/Tx7000

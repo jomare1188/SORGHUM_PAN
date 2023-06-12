@@ -5,6 +5,7 @@ cd $PBS_O_WORKDIR
 conda activate TRANSDECODER
 
 ls ./../../assemblies/ | grep .fasta > ./../../assemblies/transcriptomes_list
+mkdir -p ./../results
 
 rm transdecoder_commands
 for i in $(cat ./../../assemblies/transcriptomes_list)
