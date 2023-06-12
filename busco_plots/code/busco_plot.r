@@ -36,7 +36,7 @@ is_outlier <- function(x) {
   return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
 }
 # Pivot data: transform matrix to a 3 column table
-pivoted_data <- result %>% pivot_longer(-c(genotype), names_to = "Statistic", values_to = "percentage") %>% group_by(Statistic) %>% mutate(outlier = if_else(is_outlier(percentage), genotype, NA_character_))
+pivoted_data <- result %>% pivot_longer(-c(genotype), names_to = "Metric", values_to = "Percentage") %>% group_by(Metric) %>% mutate(outlier = if_else(is_outlier(Percentage), genotype, NA_character_))
 
 # Define colores using wesanderson movie colors
 colors = wesanderson::wes_palettes$Darjeeling1
@@ -45,10 +45,10 @@ colors = wesanderson::wes_palettes$Darjeeling1
 dir.create("./../results/")
 
 # make boxplot
-ggplot(pivoted_data, aes( x = Statistic, y = percentage, fill = Statistic)) +
-  geom_boxplot(outlier.color = "red", outlier.size = 2, lwd=0.8, colour = "black", )+
+ggplot(pivoted_data, aes( x = Metric, y = Percentage, fill = Metric)) +
+  geom_boxplot(outlier.color = "black", outlier.size = 2, lwd=0.8, colour = "black", )+
   geom_text_repel(aes(label = outlier), max.overlaps =5) +
-  labs(title="BUSCO",x="Metric", y = "Percentage")+
+  labs(title="BUSCO: 1614 embryophyta markers", x = "", y = "Percentage")+
   scale_fill_manual(values = colors) +
   theme_bw() +
   theme( text = element_text(size=20),

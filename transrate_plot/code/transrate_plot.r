@@ -50,7 +50,7 @@ dir.create("/home/j/SORGHUM_PAN/transrate_plot/results")
 
 # make boxplot
 ggplot(pivoted_data, aes( x = Statistic, y = percentage, fill = Statistic)) +
-  geom_boxplot(outlier.color = "red", outlier.size = 2, lwd=0.8, colour = "black", )+
+  geom_boxplot(outlier.color = "black", outlier.size = 2, lwd=0.8, colour = "black", )+
   geom_text_repel(aes(label = outlier)) +
   labs(title="Transrate",x="Metric", y = "Percentage")+
   scale_fill_manual(values = colors[c(1,2)]) +
@@ -68,4 +68,27 @@ ggsave("/home/j/SORGHUM_PAN/transrate_plot/results/transrate_plot.png", device =
 
 # summary other statistics
 summary(csv_full)
+# colors
+colors = wesanderson::wes_palettes$Darjeeling1
+
+# grouped barplot
+pivoted_data_seqs <- csv_full %>% select(n_seqs,CRBB_hits, n_with_orf, genotype) %>% pivot_longer(-c(genotype), names_to = "Metric", values_to = "count")
+
+# plot 
+ggplot(pivoted_data_seqs, aes( x = genotype, y = count, fill = Metric)) +
+  geom_bar(position="dodge", stat="identity") +
+  labs(title="Sequences per transcriptome",x="Transcriptome", y = "Count")+
+  scale_fill_manual(values = colors[c(1,2,3)], labels=c("CRBB hits", "Sequences", "ORFs")) +
+  theme_bw() +
+  theme( text = element_text(size=20, colour = "black"),
+         legend.key.size = unit(1, 'cm'), 
+         panel.border = element_blank(),
+         panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         axis.text.x=element_text(colour="black", angle = 90, vjust = 0.7, hjust=0.5),
+         axis.text.y=element_text(colour="black"),
+         axis.line = element_line(colour = "black", size = 1.2))
+# Save barplot
+ggsave("/home/j/SORGHUM_PAN/transrate_plot/results/transrate_barplot_plot.png", device = "png", dpi= 300, width = 35, height = 20, units = "cm")
+
 
