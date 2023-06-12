@@ -8,11 +8,15 @@ The repository currently includes the following directories:
 
 ### Assemblies
 
-The `assemblies` directory contains the assembled transcriptome data for sorghum. This includes the assembled contigs, transcripts, or any other relevant files generated during the transcriptome assembly process.
+The `assemblies` directory contains the assembled transcriptome data for sorghum. This includes the assembled transcriptomes.
 
 ### BUSCO plots
 
-The `busco_plots` directory contains the results of BUSCO avalianto in json format and a boxplot of the principal results
+The `busco_plots` directory contains the results of BUSCO avalianton in json format and a boxplot of the principal BUSCO metrics
+
+### transrate plots
+
+The `transrate_plot` directory contains  the transrate avaliantion results, this includes several plots and tables.
 
 ### Transdecoder
 
