@@ -33,6 +33,9 @@ for (i in prefix_df$prefix){
   result <- rbind(result, data)
 }
 
+# write full transrate table
+write.csv(csv_full,"./../results/full_transrate.csv", row.names = F, quote = F)
+
 # detect outliers function
 is_outlier <- function(x) {
   return(x < quantile(x, 0.25) - 1.5 * IQR(x) | x > quantile(x, 0.75) + 1.5 * IQR(x))
@@ -64,7 +67,7 @@ ggplot(pivoted_data, aes( x = Metric, y = percentage, fill = Metric)) +
          axis.text.y=element_text(colour="black"),
          axis.line = element_line(colour = "black", size = 1.2))
 # Save boxplot
-ggsave("/home/j/SORGHUM_PAN/transrate_plot/results/transrate_plot.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
+ggsave("./../results/transrate_plot.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
 
 # summary other statistics
 summary(csv_full)
@@ -89,6 +92,6 @@ ggplot(pivoted_data_seqs, aes( x = genotype, y = count, fill = Metric)) +
          axis.text.y=element_text(colour="black"),
          axis.line = element_line(colour = "black", size = 1.2))
 # Save barplot
-ggsave("/home/j/SORGHUM_PAN/transrate_plot/results/transrate_barplot_plot.png", device = "png", dpi= 300, width = 35, height = 20, units = "cm")
+ggsave("./../results/transrate_barplot_plot.png", device = "png", dpi= 300, width = 35, height = 20, units = "cm")
 
 
