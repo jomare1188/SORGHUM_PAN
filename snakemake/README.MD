@@ -37,7 +37,9 @@ and stranded_samples_Rio.tsv with the information of only stranded samples (the 
  |Rio|    SRR6257137     | ISR|
 
  we need the information of the stranded accession for the nexts steps in csv format, we can extract this information from the stranded_samples_Rio.tsv using 
-
+ ```sh
+ cut -f1 stranded_samples_Rio.tsv | sed ':a;N;$!ba;s/\n/,/g' > samples_Rio2.csv
+ ```
  ## To run the pipelile
  you shuld personalize configuration directly in Snakemake_download.py, it is important to set properly jobs and cores limit acordingly to your resources
  ```sh
