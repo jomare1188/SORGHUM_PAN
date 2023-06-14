@@ -1,0 +1,11 @@
+name: jq
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - jq=1.6=h36c2ea0_1000
+  - libgcc-ng=12.2.0=h65d4601_19
+  - libgomp=12.2.0=h65d4601_19
+  - oniguruma=6.9.8=h166bdaf_0

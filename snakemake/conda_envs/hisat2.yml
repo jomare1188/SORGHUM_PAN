@@ -1,0 +1,40 @@
+name: hista2
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - bzip2=1.0.8=h7b6447c_0
+  - c-ares=1.19.0=h5eee18b_0
+  - ca-certificates=2023.01.10=h06a4308_0
+  - curl=7.88.1=h5eee18b_0
+  - gdbm=1.18=hd4cb3f1_4
+  - hisat2=2.2.1=h87f3376_4
+  - krb5=1.19.4=h568e23c_0
+  - ld_impl_linux-64=2.38=h1181459_1
+  - libcurl=7.88.1=h91b91d3_0
+  - libedit=3.1.20221030=h5eee18b_0
+  - libev=4.33=h7f8727e_1
+  - libffi=3.4.4=h6a678d5_0
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libnghttp2=1.46.0=hce63b2e_0
+  - libssh2=1.10.0=h8f2d780_0
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - libuuid=1.41.5=h5eee18b_0
+  - ncurses=6.4=h6a678d5_0
+  - openssl=1.1.1t=h7f8727e_0
+  - perl=5.34.0=h5eee18b_2
+  - pip=23.0.1=py311h06a4308_0
+  - python=3.11.3=h7a1cb2a_0
+  - readline=8.2=h5eee18b_0
+  - samtools=1.6=hb116620_7
+  - setuptools=66.0.0=py311h06a4308_0
+  - sqlite=3.41.2=h5eee18b_0
+  - tk=8.6.12=h1ccaba5_0
+  - tzdata=2023c=h04d1e81_0
+  - wheel=0.38.4=py311h06a4308_0
+  - xz=5.2.10=h5eee18b_1
+  - zlib=1.2.13=h5eee18b_0
+prefix: /data/j/anaconda3/envs/hista2

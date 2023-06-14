@@ -1,0 +1,17 @@
+name: transrate
+channels:
+  - lmfaber
+  - bioconda/label/cf201901
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - bamtools=2.5.1=he941832_3
+  - libgcc=7.2.0=h69d50b8_2
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - transrate=1.0.3=0
+  - transrate-tools=1.0.0=0
+  - zlib=1.2.13=h5eee18b_0
+prefix: /home/j/anaconda3/envs/transrate
