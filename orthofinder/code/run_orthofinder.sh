@@ -15,10 +15,16 @@ done
 conda activate ORTHOFINDER
 
 mkdir -p ./../results
-# Run orthofinder for many inflation values
+
+# Run orthofinder to create diamond db with ultrasensitive options (need to configure scripts_of/config.json) and for i=2 
+
+orthofinder -S diamond_ultra_sens3 -I 2 -t 128 -a 64 -f ./../data/ -o ./../results/results_2
+
+# Run orthofinder for many inflation values using the previuos diamond results
 for i in 1.1 1.3 1.5 1.8 2 2.5 3 4 5 6 7 10 15 20 30 40 50 100
 do
-	orthofinder -S diamond_ultra_sens3 -I ${i} -t 48 -a 24 -f ./../data/ -o ./../results/results_${i}
+	orthofinder -t 128 -a 64 -S diamond_ultra_sens3 -I ${i} -X -og -f ./..data/ -b ./../results/results_2/Results_*/WorkingDirectory/ -o ./../results/results_${i}
+
 done
 
 
