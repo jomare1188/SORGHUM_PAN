@@ -18,7 +18,7 @@ mkdir -p ./../results
 # Run orthofinder for many inflation values
 for i in 1.1 1.3 1.5 1.8 2 2.5 3 4 5 6 7 10 15 20 30 40 50 100
 do
-	orthofinder -I ${i} -t 128 -a 64 -f ./../data/ -o ./../results/results_${i}
+	orthofinder -S diamond_ultra_sens3 -I ${i} -t 48 -a 24 -f ./../data/ -o ./../results/results_${i}
 done
 
 
