@@ -10,8 +10,9 @@
  |Rio |   SRR6257135|
  |Rio |   SRR6257137|
  |Rio |   SRR6257138|
- you need to configure the rule filter_stranded lines 104 and 105 to coincide with the name the sample file and genotype.
-# ## conda envs
+
+you need to configure the rule filter_stranded lines 104 and 105 to coincide with the name the sample file and genotype.
+ ## conda envs
  you can find the yml configuration files in conda_envs directory
  - download.yml: python2.7, ffq 
  - salmon.yml: salmon
@@ -26,7 +27,9 @@
  |Rio|     SRR6257135    |  IU|
  |Rio|    SRR6257137     | ISR|
  |Rio|     SRR6257138    |  IU|
- and stranded_samples_Rio.tsv with the information of only stranded samples (the file given by the pipeline doesn't have heaeder).
+
+and stranded_samples_Rio.tsv with the information of only stranded samples (the file given by the pipeline doesn't have heaeder).
+
  |genotype|        sample | lib|
  | --- | ----------------|---- |
  |Rio|     SRR6188852    |  ISF|
