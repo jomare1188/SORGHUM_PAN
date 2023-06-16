@@ -45,5 +45,12 @@ this will generate this table table_for_plots.tsv:
 ```sh
 python plotPanTranscriptomeGroups.py
 ```
-![Orthogroups vs genotypes](https://github.com/jomare1188/SORGHUM_PAN/blob/master/pantranscriptome/stats/results/raw_saturation.png?raw=true)
+
+Or you can group table_for_plots.tsv in table_for_plots_grouped.csv and use plotPanTranscriptomeGroups.r
+
+```sh
+Rscript plotPanTranscriptomeGroups.r
+```
+
+![Orthogroups vs genotypes](https://github.com/jomare1188/SORGHUM_PAN/blob/master/pantranscriptome/stats/results/pan_groups.png?raw=true)
 
