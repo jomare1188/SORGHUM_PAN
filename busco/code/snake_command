@@ -1,0 +1,4 @@
+#SLUMR
+snakemake -np -s snake_busco.py --use-conda --rerun-incomplete --jobs 23 --keep-going --cluster "sbatch --partition long --nodes 1 --ntasks-per-node 12 --mem=20gb --output snake.o --error snake.e"
+#PBS
+snakemake -np -s snake_busco.py --rerun-incomplete --jobs 5 --keep-going --cluster ""
