@@ -18,20 +18,3 @@ rule busco:
         shell:
             "busco -i {input.transcriptome} -o {output.busco} -c {threads} -m transcriptome -l ../../../busco_db/embryophyta_odb10"
 
-#rule transrate:
-#        input:
-#                transcriptome="MyAssembly_{genotype}/7_trinity_assembly/MyAssembly_{genotype}_trinity_k25_and_k31.Trinity.merged.final.fasta",
-#                ref="rna.fna"
-#        output:
-#                transrate=directory("MyAssembly_{genotype}/9_transrate/assemblies.csv")
-#        resources:
-#                load=1
-#        threads: 40
-#        log:
-#                "MyAssembly_{genotype}/logs/transrate/{genotype}.log"
-#        conda:
-#                "/data/j/TRANSCRIPTOMATOR/transrate.yml"
-#        shell:
-#                "transrate --assembly {input.transcriptome} --reference {input.ref} --threads {threads} --output {output.transrate} 2> {log}"
-
-
