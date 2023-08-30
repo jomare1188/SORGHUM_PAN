@@ -1,18 +1,25 @@
 # Get working directory
-wd="/home/j/SORGHUM_PAN/transrate_plot/data/"
+wd="/Storage/data1/jorge.munoz/SORGHUM_PAN/transrate_plot/data"
+
+local_lib="/Storage/data1/jorge.munoz/SORGHUM_PAN/busco_plots/data/rlibs"
+
 # Set current directory as wd
 setwd(wd)
 # load libraries
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(viridis)
-library(wesanderson)
-library(jsonlite)
-library(ggrepel)
+library(farver, lib.loc = local_lib)
+library(labeling, lib.loc = local_lib)
+library(withr, lib = local_lib)
+library(dplyr, lib = local_lib)
+library(tidyr, lib = local_lib)
+library(ggplot2, lib = local_lib)
+library(viridis, lib = local_lib)
+library(wesanderson, lib = local_lib)
+library(jsonlite, lib = local_lib)
+library(ggrepel, lib = local_lib)
+
 # Get files
 list_files <- list.files()
-list_files <- read.table("genotype_list")
+list_files <- read.table("list_files", head = F)
 prefix_df <- data.frame(prefix = substring(list_files$V1, 1, regexpr("_", list_files$V1) - 1))
 csv <- paste0(prefix_df$prefix,"_tr.csv")
 
@@ -34,7 +41,7 @@ for (i in prefix_df$prefix){
 }
 
 # write full transrate table
-write.csv(csv_full,"./../results/full_transrate.csv", row.names = F, quote = F)
+write.csv(csv_full,"../results/full_transrate2.csv", row.names = F, quote = F)
 
 # detect outliers function
 is_outlier <- function(x) {
@@ -49,7 +56,7 @@ pivoted_data <- result %>% pivot_longer(-c(genotype), names_to = "Metric", value
 colors = wesanderson::wes_palettes$Darjeeling1
 
 # make results directory
-dir.create("/home/j/SORGHUM_PAN/transrate_plot/results")
+dir.create("../results")
 
 # make boxplot
 ggplot(pivoted_data, aes( x = Metric, y = percentage, fill = Metric)) +
@@ -65,9 +72,9 @@ ggplot(pivoted_data, aes( x = Metric, y = percentage, fill = Metric)) +
          panel.grid.minor = element_blank(),
          axis.text.x=element_text(colour="black", angle = 8, vjust = 0.7, hjust=0.5),
          axis.text.y=element_text(colour="black"),
-         axis.line = element_line(colour = "black", size = 1.2))
+         axis.line = element_line(colour = "black", linewidth = 1.2))
 # Save boxplot
-ggsave("./../results/transrate_plot.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
+ggsave("../results/transrate_plot2.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
 
 # summary other statistics
 summary(csv_full)
@@ -90,8 +97,8 @@ ggplot(pivoted_data_seqs, aes( x = genotype, y = count, fill = Metric)) +
          panel.grid.minor = element_blank(),
          axis.text.x=element_text(colour="black", angle = 90, vjust = 0.7, hjust=0.5),
          axis.text.y=element_text(colour="black"),
-         axis.line = element_line(colour = "black", size = 1.2))
+         axis.line = element_line(colour = "black", linewidth = 1.2))
 # Save barplot
-ggsave("./../results/transrate_barplot_plot.png", device = "png", dpi= 300, width = 35, height = 20, units = "cm")
+ggsave("../results/transrate_barplot_plot.png", device = "png", dpi= 300, width = 35, height = 20, units = "cm")
 
 
