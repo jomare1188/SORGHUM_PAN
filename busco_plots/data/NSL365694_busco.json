@@ -1,12 +1,49 @@
 {
     "parameters": {
-	"out": "MyAssembly_NSL365694/8_busco/My_Assembly_NSL365694_k25_and_k31_busco"
+        "out_path": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code",
+        "cpu": "5",
+        "force": "False",
+        "restart": "False",
+        "quiet": "False",
+        "download_path": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code/busco_downloads",
+        "datasets_version": "odb10",
+        "offline": "False",
+        "download_base_url": "https://busco-data.ezlab.org/v5/data/",
+        "auto-lineage": "False",
+        "auto-lineage-prok": "False",
+        "auto-lineage-euk": "False",
+        "update-data": "False",
+        "use_augustus": "False",
+        "batch_mode": "False",
+        "tar": "False",
+        "in": "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/NSL365694.fasta",
+        "out": "../results/NSL365694_busco",
+        "mode": "euk_tran",
+        "lineage_dataset": "../../../busco_db/embryophyta_odb10",
+        "main_out": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code/../results/NSL365694_busco",
+        "lineage_results_dir": "run_embryophyta_odb10",
+        "domain": "eukaryota",
+        "max_intron": "90000",
+        "max_seq_len": "120000",
+        "metaeuk_parameters": "",
+        "metaeuk_rerun_parameters": ""
+    },
+    "lineage_dataset": {
+        "name": "embryophyta_odb10",
+        "creation_date": "2020-09-10",
+        "number_of_buscos": "1614",
+        "number_of_species": "50"
+    },
+    "versions": {
+        "hmmsearch": 3.1,
+        "metaeuk": "6.a5d39d9",
+        "busco": "5.4.4"
     },
     "results": {
         "one_line_summary": "C:0.0%[S:0.0%,D:0.0%],F:0.7%,M:99.3%,n:1614",
-        "Complete": 0,
-        "Single copy": 0,
-        "Multi copy": 0,
+        "Complete": 0.0,
+        "Single copy": 0.0,
+        "Multi copy": 0.0,
         "Fragmented": 0.7,
         "Missing": 99.3,
         "n_markers": 1614,

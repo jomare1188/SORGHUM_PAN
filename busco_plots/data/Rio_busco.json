@@ -1,14 +1,51 @@
 {
     "parameters": {
-	"out": "MyAssembly_keller/8_busco/My_Assembly_keller_k25_and_k31_busco"
+        "out_path": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code",
+        "cpu": "5",
+        "force": "False",
+        "restart": "False",
+        "quiet": "False",
+        "download_path": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code/busco_downloads",
+        "datasets_version": "odb10",
+        "offline": "False",
+        "download_base_url": "https://busco-data.ezlab.org/v5/data/",
+        "auto-lineage": "False",
+        "auto-lineage-prok": "False",
+        "auto-lineage-euk": "False",
+        "update-data": "False",
+        "use_augustus": "False",
+        "batch_mode": "False",
+        "tar": "False",
+        "in": "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/Rio.fasta",
+        "out": "../results/Rio_busco",
+        "mode": "euk_tran",
+        "lineage_dataset": "../../../busco_db/embryophyta_odb10",
+        "main_out": "/Storage/data1/jorge.munoz/SORGHUM_PAN/busco/code/../results/Rio_busco",
+        "lineage_results_dir": "run_embryophyta_odb10",
+        "domain": "eukaryota",
+        "max_intron": "90000",
+        "max_seq_len": "120000",
+        "metaeuk_parameters": "",
+        "metaeuk_rerun_parameters": ""
+    },
+    "lineage_dataset": {
+        "name": "embryophyta_odb10",
+        "creation_date": "2020-09-10",
+        "number_of_buscos": "1614",
+        "number_of_species": "50"
+    },
+    "versions": {
+        "hmmsearch": 3.1,
+        "metaeuk": "6.a5d39d9",
+        "busco": "5.4.4"
     },
     "results": {
-        "one_line_summary": "C:99.1%[S:9.0%,D:90.1%],F:0.2%,M:0.7%,n:1614",
-        "Complete": 99.1,
+        "one_line_summary": "C:99.2%[S:9.0%,D:90.2%],F:0.2%,M:0.6%,n:1614",
+        "Complete": 99.2,
         "Single copy": 9.0,
-        "Multi copy": 90.1,
+        "Multi copy": 90.2,
         "Fragmented": 0.2,
-        "Missing": 0.7,
+        "Missing": 0.6,
         "n_markers": 1614,
         "domain": "eukaryota"
     }

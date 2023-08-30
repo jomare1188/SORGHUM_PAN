@@ -1,15 +1,20 @@
 # Get working directory
-wd="/home/j/SORGHUM_PAN/busco_plots/data/"
+wd="/Storage/data1/jorge.munoz/SORGHUM_PAN/busco_plots/data"
 # Set current directory as wd
 setwd(wd)
 # load libraries
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(viridis)
-library(wesanderson)
-library(jsonlite)
-library(ggrepel)
+local_lib="/Storage/data1/jorge.munoz/SORGHUM_PAN/busco_plots/data/rlibs"
+
+library(farver, lib.loc = local_lib)
+library(labeling, lib.loc = local_lib)
+library(withr, lib = local_lib)
+library(dplyr, lib = local_lib)
+library(tidyr, lib = local_lib)
+library(ggplot2, lib = local_lib)
+library(viridis, lib = local_lib)
+library(wesanderson, lib = local_lib)
+library(jsonlite, lib = local_lib)
+library(ggrepel, lib = local_lib)
 # Get files
 list_files <- list.files()
 list_files <- read.table("busco_files.txt")
@@ -58,7 +63,7 @@ ggplot(pivoted_data, aes( x = Metric, y = Percentage, fill = Metric)) +
          panel.grid.minor = element_blank(),
          axis.text.x=element_text(colour="black", angle = 8, vjust = 0.7, hjust=0.5),
          axis.text.y=element_text(colour="black"),
-         axis.line = element_line(colour = "black", size = 1.2))
+         axis.line = element_line(colour = "black", linewidth = 1.2))
 # Save boxplot
 ggsave("./../results/busco_plot.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
 
