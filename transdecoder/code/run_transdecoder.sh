@@ -1,17 +1,19 @@
-#PBS -q par16
-#PBS -l nodes=1:ppn=16
+#!/bin/bash
+#$ -q all.q
+#$ -cwd
+#$ -V
+#$ -pe smp 23
 
-#cd $PBS_O_WORKDIR
-conda activate TRANSDECODER
 
-ls ./../../assemblies/ | grep .fasta > ./../../assemblies/transcriptomes_list
+module load transdecoder/5.5.0
+
+#ls ./../../assemblies/ | grep .fasta > ./../../assemblies/transcriptomes_list
 mkdir -p ./../results
 
 rm transdecoder_commands
-for i in $(cat ./../../assemblies/transcriptomes_list)
+for i in $(cat ./../../assemblies/contig_300/genotypes)
 do
-	GENOTYPE=$(echo ${i} | cut -f2 -d"_")
-	echo TransDecoder.LongOrfs -S -t ./../../assemblies/$i --output_dir ./../results/$GENOTYPE >> transdecoder_commands
+	echo TransDecoder.LongOrfs -S -t ./../../assemblies/contig_300/${i}.fasta --output_dir ./../results/${i}.pep >> transdecoder_commands
 done
 
-cat transdecoder_commands | parallel -j48
+cat transdecoder_commands | parallel -j23
