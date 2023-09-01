@@ -4,12 +4,12 @@
 #PBS -N orthofinder
 
 cd $PBS_O_WORKDIR
-mkdir -p ./../data
+#mkdir -p ./../data
 
 # copy and rename .pep of transcoder to a new folder with $GENOTYPE.pep name to run orthofinder
-for i in $(cat ./../data/genotype_list)
+for i in $(cat ./../data/contig_300/genotypes)
 do
-	cp ./../../transdecoder/results/$i/longest_orfs.pep ./../data/$i.pep
+	cp -v ./../../transdecoder/results/${i}.pep/longest_orfs.pep ./../data/contig_300/$i.pep
 done
 
 conda activate ORTHOFINDER
