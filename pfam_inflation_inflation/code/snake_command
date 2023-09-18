@@ -1,1 +1,0 @@
-snakemake -np -s run_pfam.sh --rerun-incomplete --jobs 15 --keep-going --cluster sbatch --partition long --nodes 1 --ntasks-per-node 6 --mem=20gb --output snake.o --error snake.e

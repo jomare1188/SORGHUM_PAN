@@ -1,0 +1,101 @@
+GO.ID,Term,Annotated,Significant,Expected,Classic,p.adj
+GO:0009628,response to abiotic stimulus,46,14,4.91,0.00017,0.0136
+GO:0008219,cell death,3,3,0.32,0.00120,0.0136
+GO:0010941,regulation of cell death,3,3,0.32,0.00120,0.0136
+GO:0012501,programmed cell death,3,3,0.32,0.00120,0.0136
+GO:0043067,regulation of programmed cell death,3,3,0.32,0.00120,0.0136
+GO:0048199,vesicle targeting, to, from or within Go...,3,3,0.32,0.00120,0.0136
+GO:0048207,vesicle targeting, rough ER to cis-Golgi,3,3,0.32,0.00120,0.0136
+GO:0006722,triterpenoid metabolic process,6,4,0.64,0.00159,0.0136
+GO:0016104,triterpenoid biosynthetic process,6,4,0.64,0.00159,0.0136
+GO:0016070,RNA metabolic process,136,26,14.52,0.00162,0.0136
+GO:0009605,response to external stimulus,47,12,5.02,0.00281,0.018
+GO:0009451,RNA modification,30,9,3.2,0.00292,0.018
+GO:0065008,regulation of biological quality,43,11,4.59,0.00413,0.018
+GO:0008380,RNA splicing,26,8,2.78,0.00420,0.018
+GO:0006888,endoplasmic reticulum to Golgi vesicle-m...,4,3,0.43,0.00443,0.018
+GO:0042255,ribosome assembly,4,3,0.43,0.00443,0.018
+GO:0070925,organelle assembly,4,3,0.43,0.00443,0.018
+GO:0042592,homeostatic process,33,9,3.52,0.00592,0.018
+GO:0006397,mRNA processing,34,9,3.63,0.00732,0.018
+GO:0022613,ribonucleoprotein complex biogenesis,34,9,3.63,0.00732,0.018
+GO:0000375,RNA splicing, via transesterification re...,18,6,1.92,0.00850,0.018
+GO:0000377,RNA splicing, via transesterification re...,18,6,1.92,0.00850,0.018
+GO:0000398,mRNA splicing, via spliceosome,18,6,1.92,0.00850,0.018
+GO:0006903,vesicle targeting,5,3,0.53,0.01020,0.018
+GO:0048584,positive regulation of response to stimu...,5,3,0.53,0.01020,0.018
+GO:0051648,vesicle localization,5,3,0.53,0.01020,0.018
+GO:0051650,establishment of vesicle localization,5,3,0.53,0.01020,0.018
+GO:0006511,ubiquitin-dependent protein catabolic pr...,9,4,0.96,0.01033,0.018
+GO:0016114,terpenoid biosynthetic process,9,4,0.96,0.01033,0.018
+GO:0019941,modification-dependent protein catabolic...,9,4,0.96,0.01033,0.018
+GO:0043632,modification-dependent macromolecule cat...,9,4,0.96,0.01033,0.018
+GO:0044257,cellular protein catabolic process,9,4,0.96,0.01033,0.018
+GO:0051603,proteolysis involved in cellular protein...,9,4,0.96,0.01033,0.018
+GO:0000027,ribosomal large subunit assembly,2,2,0.21,0.01135,0.018
+GO:0001678,cellular glucose homeostasis,2,2,0.21,0.01135,0.018
+GO:0006066,alcohol metabolic process,2,2,0.21,0.01135,0.018
+GO:0006102,isocitrate metabolic process,2,2,0.21,0.01135,0.018
+GO:0006415,translational termination,2,2,0.21,0.01135,0.018
+GO:0010117,photoprotection,2,2,0.21,0.01135,0.018
+GO:0016197,endosomal transport,2,2,0.21,0.01135,0.018
+GO:0032509,endosome transport via multivesicular bo...,2,2,0.21,0.01135,0.018
+GO:0032511,late endosome to vacuole transport via m...,2,2,0.21,0.01135,0.018
+GO:0033500,carbohydrate homeostasis,2,2,0.21,0.01135,0.018
+GO:0042593,glucose homeostasis,2,2,0.21,0.01135,0.018
+GO:0042752,regulation of circadian rhythm,2,2,0.21,0.01135,0.018
+GO:0043162,ubiquitin-dependent protein catabolic pr...,2,2,0.21,0.01135,0.018
+GO:0043328,protein transport to vacuole involved in...,2,2,0.21,0.01135,0.018
+GO:0045324,late endosome to vacuole transport,2,2,0.21,0.01135,0.018
+GO:0071985,multivesicular body sorting pathway,2,2,0.21,0.01135,0.018
+GO:0072350,tricarboxylic acid metabolic process,2,2,0.21,0.01135,0.018
+GO:0072665,protein localization to vacuole,2,2,0.21,0.01135,0.018
+GO:0072666,establishment of protein localization to...,2,2,0.21,0.01135,0.018
+GO:1902652,secondary alcohol metabolic process,2,2,0.21,0.01135,0.018
+GO:0006996,organelle organization,106,19,11.32,0.01403,0.0218
+GO:0016071,mRNA metabolic process,38,9,4.06,0.01558,0.0224
+GO:0006721,terpenoid metabolic process,10,4,1.07,0.01579,0.0224
+GO:0030163,protein catabolic process,10,4,1.07,0.01579,0.0224
+GO:0000723,telomere maintenance,26,7,2.78,0.01598,0.0224
+GO:0032200,telomere organization,26,7,2.78,0.01598,0.0224
+GO:0060249,anatomical structure homeostasis,26,7,2.78,0.01598,0.0224
+GO:0016192,vesicle-mediated transport,21,6,2.24,0.01890,0.026
+GO:0009314,response to radiation,16,5,1.71,0.02159,0.0288
+GO:0009416,response to light stimulus,16,5,1.71,0.02159,0.0288
+GO:0008299,isoprenoid biosynthetic process,11,4,1.17,0.02278,0.0299
+GO:0016043,cellular component organization,185,28,19.76,0.03008,0.0345
+GO:0006720,isoprenoid metabolic process,12,4,1.28,0.03137,0.0345
+GO:0006304,DNA modification,3,2,0.32,0.03166,0.0345
+GO:0006305,DNA alkylation,3,2,0.32,0.03166,0.0345
+GO:0007623,circadian rhythm,3,2,0.32,0.03166,0.0345
+GO:0009967,positive regulation of signal transducti...,3,2,0.32,0.03166,0.0345
+GO:0010647,positive regulation of cell communicatio...,3,2,0.32,0.03166,0.0345
+GO:0023056,positive regulation of signaling,3,2,0.32,0.03166,0.0345
+GO:0048511,rhythmic process,3,2,0.32,0.03166,0.0345
+GO:0090227,regulation of red or far-red light signa...,3,2,0.32,0.03166,0.0345
+GO:0090228,positive regulation of red or far-red li...,3,2,0.32,0.03166,0.0345
+GO:1901615,organic hydroxy compound metabolic proce...,3,2,0.32,0.03166,0.0345
+GO:2000030,regulation of response to red or far red...,3,2,0.32,0.03166,0.0345
+GO:0051276,chromosome organization,51,10,5.45,0.03906,0.0421
+GO:0006508,proteolysis,13,4,1.39,0.04162,0.0437
+GO:0044265,cellular macromolecule catabolic process,13,4,1.39,0.04162,0.0437
+GO:0006396,RNA processing,59,11,6.3,0.04347,0.0448
+GO:0009966,regulation of signal transduction,8,3,0.85,0.04479,0.0448
+GO:0010646,regulation of cell communication,8,3,0.85,0.04479,0.0448
+GO:0023051,regulation of signaling,8,3,0.85,0.04479,0.0448
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,NA,NA,NA

@@ -11,26 +11,24 @@
 
 you can run the script as follows: 
 ```sh
-python computeOrthogroupStats.py --orthogroupsFile Orthogroups.tsv --numberSpecies 20
+python computeOrthogroupStats.py --orthogroupsFile ../data/Orthogroups_I3.0.tsv --numberSpecies 18 --suffixOut I3.0
 ```
+it will create panTranscriptomeClassificationTable_I3.0.tsv, panTranscriptomeDistributionSizeOrthogroupsTable_I3.0.png, panTranscriptomeDistributionSizeOrthogroupsTable_I3.0.svg, panTranscriptomeDistributionSizeOrthogroupsTable_I3.0.tsv, panTranscriptomeStatisticsOrthogroups_I3.0.tsv.
+
 ```sh
-Number of groups present in all (20) species:	30
-Number of proteins present in core groups:	2474
-Number of groups present in 90% of the species (18.0):	1385
-Number of proteins present in soft-core groups:	85950
-Number of accesory groups:	293335
-Number of proteins present in accessory groups:	3338131
-Number of exclusive groups:	95054
-Number of proteins present in exclusive groups:	346929
+Number of groups present in all (18) species:   0
+Number of proteins present in core groups:      0
+Number of groups present in 90% of the species (16.2):  0
+Number of proteins present in soft-core groups: 0
+Number of accesory groups:      147285
+Number of proteins present in accessory groups: 1762529
+Number of exclusive groups:     26460
+Number of proteins present in exclusive groups: 77344
 ```
-- extractPanTranscriptomeGroups.py: this script needs as input the Orthogroups.GeneCount.tsv file generate by orthofinder, first we remove the column called total:
+- extractPanTranscriptomeGroups.py: this script needs as input the Orthogroups.GeneCount.tsv file generate by orthofinder
+ 
 ```sh
-awk 'BEGIN{OFS="\t"} {NF--} 1' Orthogroups.GeneCount.tsv > Orthogroups.GeneCount.nototal.tsv
-```
-and we use this file to run extractPanTranscriptomeGroups.py 
-```sh
-python extractPanTranscriptomeGroups.py -i Orthogroups.GeneCount.nototal.tsv
-cat header Pan-Transcriptome_Size.Orthogroups.GeneCount.nototal.tsv > table_for_plots.tsv
+python extractPanTranscriptomeGroups.py -i Orthogroups.GeneCount_I3.0.tsv
 ```
 this will generate this table table_for_plots.tsv:
 
@@ -41,6 +39,7 @@ this will generate this table table_for_plots.tsv:
 |132957|  377970|  132957 | 377970|  0  |     0   |    0      | 0    |   256817 | 0 |      1     |  2|
 |38885|   92212 |  38885 |  92212 |  0 |      0    |   0     |  0  |     350889  |0 |      1      | 3|
 |85690|   159888|  85690|   159888 | 0 |      0     |  0    |   0   |    304084 | 0 |      1      | 4 |
+
 - plotPanTranscriptomeGroups.py: this script makes a plot of the orthogroups vs Number of genotypes.
 ```sh
 python plotPanTranscriptomeGroups.py
