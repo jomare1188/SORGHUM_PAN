@@ -4,7 +4,7 @@ library(dplyr)
 
 table_clm <- read.table("../results/table_clm.csv", header = T, sep = ",")
 # make table to show the strong cluster tendendy
-write.table(filter_clm, "../results/strong_cluster_tendency.csv", sep = ",", quote = F)
+#write.table(filter_clm, "../results/strong_cluster_tendency.csv", sep = ",", quote = F)
 
 # make plot efficiency vs inflation to show the peak
 ggplot(data = table_clm) +
