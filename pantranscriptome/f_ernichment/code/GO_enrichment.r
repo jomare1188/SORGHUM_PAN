@@ -10,12 +10,14 @@ library(scales, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 library(clusterProfiler, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 
 
-geneID2GO <- readMappings(file = "../data/formated_GO.tsv", sep= " ")
-pan_groups <- read.table(file = "../data/panTranscriptomeClassificationTable_test_n18-16.tsv" )
+geneID2GO <- readMappings(file = "../data/GO_formatted.txt", sep= " ")
+pan_groups <- read.table(file = "../data/panTranscriptomeClassificationTable_I2.7.tsv" )
 colnames(pan_groups) <- c("Group", "Orthogroup", "id")
 pan_groups$Group <- as.factor(pan_groups$Group)
 geneNames <- pan_groups$id
-myInterestingGenes <- geneNames[pan_groups$Group=="Soft-core"]
+
+GO_enrichment <- function(pan_element){
+myInterestingGenes <- geneNames[pan_groups$Group==pan_element]
 geneList <- as.factor(as.integer(geneNames %in% myInterestingGenes))
 names(geneList) <- geneNames
 
@@ -39,48 +41,34 @@ all_res_final <<- all_res_final[order(all_res_final$p.adj),]
 results.table.p = all_res_final[which(all_res_final$Classic <=0.05),]
 # Get list of significant GO after multiple testing correction
 results.table.bh = all_res_final[which(all_res_final$p.adj<=0.05),]
-# Save first top 50 ontolgies sorted by adjusted pvalues
-#write.table(all_res_final[1:100,], file = "../results/Exclusive.csv", quote=FALSE, row.names=FALSE, sep = ",")
-
+# get only 12 most signigicat restults
 ntop <- 12
+
 ggdata <- all_res_final[1:ntop,]
+ggdata <- ggdata[complete.cases(ggdata), ]
 #ggdata <- all_res_final
-aux <- go2term(all_res_final$GO.ID)
+aux <- go2term(ggdata$GO.ID)
 colnames(aux) <- c("GO.ID", "Lterm")
 
 ggdata <- merge(ggdata, aux, by = "GO.ID")
-
 ggdata$Classic <- as.numeric(ggdata$Classic)
 
 ggdata <- ggdata[order(ggdata$Classic),]
 ggdata$Lterm <- factor(ggdata$Lterm, levels = rev(ggdata$Lterm)) # fixes order
 
-gg1 <- ggplot(ggdata[1:ntop,], aes(x = Lterm, y = -log10(Classic) ))+
-  #expand_limits(y = 1) +
+gg1 <- ggplot(ggdata, aes(x = Lterm, y = -log10(Classic) ))+
   geom_point(size = 6, colour = "black") +
   scale_size(range = c(2.5,12.5)) +
   xlab('GO Term') +
-  ylab('Enrichment score') +
+  ylab('-log(p)') +
   labs(title = 'GO Biological processes')+
   theme_bw(base_size = 24) +
-  #theme(
-  #  legend.position = 'right',
-  #  legend.background = element_rect(),
-  #  plot.title = element_text(angle = 0, size = 16, face = 'bold', vjust = 1),
-  #  plot.subtitle = element_text(angle = 0, size = 14, face = 'bold', vjust = 1),
-  #  plot.caption = element_text(angle = 0, size = 12, face = 'bold', vjust = 1),
-  #  axis.text.x = element_text(angle = 0, size = 12, face = 'bold', hjust = 1.10),
-  #  axis.text.y = element_text(angle = 0, size = 12, face = 'bold', vjust = 0.5),
-  #  axis.title = element_text(size = 12, face = 'bold'),
-  #  axis.title.x = element_text(size = 12, face = 'bold'),
-  #  axis.title.y = element_text(size = 12, face = 'bold'),
-  #  axis.line = element_line(colour = 'black'),
-    #Legend
-  #  legend.key = element_blank(), # removes the border
-  #  legend.key.size = unit(1, "cm"), # Sets overall area/size of the legend
-  #  legend.text = element_text(size = 14, face = "bold"), # Text size
-  #  title = element_text(size = 14, face = "bold")) 
   coord_flip()
-ggsave("../results/Soft-core.png", device = "png", width = 35, height = 30, dpi = 300, units = "cm")
+ggsave(paste0("../results/", pan_element, ".png"), device = "png", width = 35, height = 30, dpi = 300, units = "cm")
+}
 
+GO_enrichment("Accessory")
+GO_enrichment("Exclusive")
+GO_enrichment("Hard-core")
+GO_enrichment("Soft-core")
 
