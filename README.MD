@@ -3,7 +3,6 @@
 This repository contains the files and data related to the construction of the sorghum pan-transcriptome. The project aims to explore the transcriptome of sorghum and analyze its genetic diversity and functional elements.
 
 
-
 ## Project Structure
 #The repository is organized into the following folders:
 
@@ -19,8 +18,7 @@ This repository contains the files and data related to the construction of the s
 - **snakemake**: Workflow scripts or configuration for Snakemake, a workflow management system.
 - **transrate**: Data and scripts for transcriptome quality assessment using TransRate.
 - **transrate_plot**: Visualizations and plots generated from TransRate analysis.
-- **transdecoder**: Tools and resources for transcriptome annotation.
-
+- **transdecoder**: Tools and resources for transcriptome CDS and proteins.
 
 ## Usage
 
