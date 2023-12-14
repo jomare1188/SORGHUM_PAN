@@ -66,6 +66,7 @@ ggplot(pivoted_data, aes( x = Metric, y = Percentage, fill = Metric)) +
          axis.line = element_line(colour = "black", linewidth = 1.2))
 # Save boxplot
 ggsave("./../results/busco_plot.png", device = "png", dpi= 300, width = 22, height = 20, units = "cm")
-
+# Save table with organized busco data
+write.table(pivoted_data, "./../results/big_busco.csv", header = T, row)
 
 

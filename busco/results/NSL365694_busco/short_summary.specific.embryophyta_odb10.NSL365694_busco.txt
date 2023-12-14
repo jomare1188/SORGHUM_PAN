@@ -1,0 +1,19 @@
+# BUSCO version is: 5.4.4 
+# The lineage dataset is: embryophyta_odb10 (Creation date: 2020-09-10, number of genomes: 50, number of BUSCOs: 1614)
+# Summarized benchmarking in BUSCO notation for file /Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/NSL365694.fasta
+# BUSCO was run in mode: euk_tran
+
+	***** Results: *****
+
+	C:0.0%[S:0.0%,D:0.0%],F:0.7%,M:99.3%,n:1614	   
+	0	Complete BUSCOs (C)			   
+	0	Complete and single-copy BUSCOs (S)	   
+	0	Complete and duplicated BUSCOs (D)	   
+	11	Fragmented BUSCOs (F)			   
+	1603	Missing BUSCOs (M)			   
+	1614	Total BUSCO groups searched		   
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	metaeuk: 6.a5d39d9
+	busco: 5.4.4
