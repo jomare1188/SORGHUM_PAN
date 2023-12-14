@@ -1,68 +1,47 @@
+library(tidyverse)
+
+
 library(dplyr)
 library(ggplot2)
 
-setwd("/home/j/derivadas_sorgo")
-df <- read.table("Pan-Transcriptome_Size_0.88.Orthogroups.GeneCount_I3.0.tsv", header = T)
+DIR="/home/jmmunozp/derivadas"
+PanGeneCount="Pan-Transcriptome_Size_0.9.Orthogroups.GeneCount_I2.7.tsv"
 
+setwd(DIR)
+df <- read.table(PanGeneCount, header = T)
 
+# SOME R MAGIC TO GET ONLY MEAN VALUES OF PANTRANSCRIPTOME ACROSS NUMBER OF GENOTYPES
 df_pan <- df %>%
   filter(Classification == "Pan-transcriptome") %>%
   group_by(NumberGenotypes) %>%
   summarise_at(vars(NumberGenes, NumberGroups), list(mean))
 
-dGenotypes <- diff(df_pan$NumberGenotypes, lag = 1)
+## YOU HAVE TO ADD THE DATA CORRESPONDING TO THE TOTAL OF GENOTYPES WICH IS NOT LISTED IN THE TRAJECTORY SCRIPT
+df_pan <- df_pan %>% add_row(NumberGenotypes = 18, NumberGenes = 3890906 ,NumberGroups = 383917 )
 
+## CALCULATE DELTAS
+dGenotypes <- diff(df_pan$NumberGenotypes)
 dGroups <- diff(df_pan$NumberGroups)
-
+## CALCULATE FRACTIONS 
 dGroups.dGenotypes <- as.data.frame(dGroups/dGenotypes)
+## NAME THE VECTOR
 colnames(dGroups.dGenotypes) <- c("dGroups")
-#dGroups.dGenotypes$NumberGenotypes <- as.integer(dGroups.dGenotypes$NumberGenotypes)
-
+# NAME VECTOR
 dGroups.dGenotypes$NumberGenotypes <- row.names(dGroups.dGenotypes)
-
+# SET THAT COLUMN AS NUMERIC
 dGroups.dGenotypes$NumberGenotypes <- as.numeric(dGroups.dGenotypes$NumberGenotypes)
-
+# MAKE THE SMOOTH LINE ADJUSTING A LOESS MODEL TO DATA
 line_groups <- loess(dGroups~NumberGenotypes, dGroups.dGenotypes)
 
-#smooth <- predict(line_groups, newdata = variable_genotypes$NumberGenotypes)
-#plot(smooth)
-
+# MAKE THE PLOT
 ggplot() +
   geom_point(data = dGroups.dGenotypes, aes(x = NumberGenotypes, y = dGroups))+
-  geom_smooth(data = dGroups.dGenotypes, aes(x = NumberGenotypes, y = dGroups), method = "loess")+
-  labs(title = "Pan-Genome: Groups", y = "dx/dy")
-ggsave("Pan-Genome:Groups-first.derivate.png", device = "png", dpi= 300, width = 35/2.4, height = 20/2.4, units = "cm")
+  geom_smooth(data = dGroups.dGenotypes, aes(x = NumberGenotypes, y = dGroups, color = "LOESS"), method = "loess")+
+  labs(title = "Pan-transcriptome: Groups", y = "dx/dy", color = "") +
+  scale_x_continuous(breaks = seq(min(dGroups.dGenotypes$NumberGenotypes), max(dGroups.dGenotypes$NumberGenotypes), by = 1))+
+  scale_color_manual(values = "black") +
+  theme_minimal(base_size = 14, base_family = "Times")
+ggsave("SORGHUM_first_derivate.png", device = "png", dpi= 300, width = 35/2.4, height = 20/2.4, units = "cm")
 
-ggplot() +
-  geom_point(data = filter(dGroups.dGenotypes, NumberGenotypes > 10), aes(x = NumberGenotypes, y = dGroups))+
-  geom_smooth(data = filter(dGroups.dGenotypes, NumberGenotypes > 10), aes(x = NumberGenotypes, y = dGroups), method = "loess")+
-  labs(title = "Pan-Genome: Groups", y = "dx/dy")
-ggsave("Pan-Genome:Groups-first.derivate-zoom.png", device = "png", dpi= 300, width = 35/2.4, height = 20/2.4, units = "cm")
 
-### NOW FOR GENES
-
-dGenes <- diff(df_pan$NumberGenes)
-
-dGenes.dGenotypes <- as.data.frame(dGenes/dGenotypes)
-colnames(dGenes.dGenotypes) <- c("dGenes")
-
-dGenes.dGenotypes$NumberGenotypes <- row.names(dGenes.dGenotypes)
-dGenes.dGenotypes$NumberGenotypes <- as.integer(dGenes.dGenotypes$NumberGenotypes)
-
-line_groups <- loess(dGenes~NumberGenotypes, dGenes.dGenotypes)
-
-#smooth <- predict(line_groups, newdata = variable_genotypes$NumberGenotypes)
-#plot(smooth)
-
-ggplot() +
-  geom_point(data = dGenes.dGenotypes, aes(x = NumberGenotypes, y = dGenes))+
-  geom_smooth(data = dGenes.dGenotypes, aes(x = NumberGenotypes, y = dGenes), method = "loess")+
-  labs(title = "Pan-Genome: Genes", y = "dx/dy")
-ggsave("Pan-Genome:Genes-first.derivate.png", device = "png", dpi= 300, width = 35/2.4, height = 20/2.4, units = "cm")
-
-ggplot() +
-  geom_point(data = filter(dGenes.dGenotypes), aes(x = NumberGenotypes, y = dGenes))+
-  geom_smooth(data = filter(dGenes.dGenotypes), aes(x = NumberGenotypes, y = dGenes), method = "loess")+
-  labs(title = "Pan-Genome: Genes", y = "dx/dy")
-ggsave("Pan-Genome:Genes-first.derivate-zoom.png", device = "png", dpi= 300, width = 35/2.4, height = 20/2.4, units = "cm")
 
