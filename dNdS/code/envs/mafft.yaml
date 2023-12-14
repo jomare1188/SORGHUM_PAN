@@ -1,0 +1,45 @@
+name: MAFFT
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=conda_forge
+  - _openmp_mutex=4.5=2_gnu
+  - ca-certificates=2023.08.22=h06a4308_0
+  - certifi=2022.12.7=py37h06a4308_0
+  - dbus=1.13.18=hb2f20db_0
+  - expat=2.5.0=h6a678d5_0
+  - freetype=2.12.1=h4a9f257_0
+  - gawk=5.3.0=ha916aea_0
+  - gettext=0.21.1=h27087fc_0
+  - glib=2.69.1=he621ea3_2
+  - gmp=6.3.0=h59595ed_0
+  - ld_impl_linux-64=2.38=h1181459_1
+  - libffi=3.4.4=h6a678d5_0
+  - libgcc-ng=13.2.0=h807b86a_3
+  - libgomp=13.2.0=h807b86a_3
+  - libpng=1.6.39=h5eee18b_0
+  - libstdcxx-ng=13.2.0=h7e041cc_3
+  - libxcb=1.15=h7f8727e_0
+  - mafft=7.520=h031d066_3
+  - mpfr=4.2.1=h9458935_0
+  - ncurses=6.4=h59595ed_2
+  - openjdk=11.0.13=h87a67e3_0
+  - openssl=1.1.1w=h7f8727e_0
+  - paml=4.10.7=h031d066_0
+  - pasta=1.7.8=py37h14c3975_3
+  - pcre=8.45=h295c915_0
+  - pip=22.3.1=py37h06a4308_0
+  - pymongo=3.12.0=py37h295c915_0
+  - python=3.7.16=h7a1cb2a_0
+  - readline=8.2=h8228510_1
+  - setuptools=65.6.3=py37h06a4308_0
+  - sqlite=3.41.2=h5eee18b_0
+  - tk=8.6.12=h1ccaba5_0
+  - wheel=0.38.4=py37h06a4308_0
+  - xz=5.4.2=h5eee18b_0
+  - zlib=1.2.13=h5eee18b_0
+  - pip:
+      - dendropy==4.5.1
+prefix: /home/dmpachon/miniconda3/envs/MAFFT

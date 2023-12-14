@@ -1,0 +1,9 @@
+seqtype = 1
+ndata = 1
+model = 0
+runmode = -2
+NSsites = 0
+fix_omega = 0
+verbose = 1
+omega = 0.5
+clock = 0
