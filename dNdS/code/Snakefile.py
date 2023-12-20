@@ -6,10 +6,10 @@ ORTHOGROUPS = pd.read_csv("4orMoreOG_samples.txt", names = ["OG"])
 
 rule all:
     input:
-            expand("/home/dmpachon/dNdS/results/{orthogroup}_mafft_alignment.fa",orthogroup=ORTHOGROUPS.OG),
-            expand("/home/dmpachon/dNdS/results/{orthogroup}_pal2nal.paml", orthogroup=ORTHOGROUPS.OG),
-            expand("/home/dmpachon/dNdS/results/{orthogroup}_omega.txt", orthogroup=ORTHOGROUPS.OG),
-            "/home/dmpachon/dNdS/results/dnds_sorghum_pan.csv",
+            #expand("/home/dmpachon/dNdS/results/{orthogroup}_mafft_alignment.fa",orthogroup=ORTHOGROUPS.OG),
+            #expand("/home/dmpachon/dNdS/results/{orthogroup}_pal2nal.paml", orthogroup=ORTHOGROUPS.OG),
+            #expand("/home/dmpachon/dNdS/results/{orthogroup}_omega.txt", orthogroup=ORTHOGROUPS.OG),
+            #"/home/dmpachon/dNdS/results/dnds_sorghum_pan.csv",
             "/home/dmpachon/dNdS/results/plot_dnds.png"
 
 rule mafft:
@@ -82,11 +82,11 @@ rule merge_omegas:
             load = 1
         name: "dn.ds_merge_tables"
         params:
-            mem="8gb"
+            mem="20gb"
         log:
             "logs/merge_tables.log"
-        shell:
-            "cat {input} > {output}"
+        script:
+            "scripts/run_merge_table.sh"
 rule make_plots:
         input:
             "/home/dmpachon/dNdS/results/dnds_sorghum_pan.csv",

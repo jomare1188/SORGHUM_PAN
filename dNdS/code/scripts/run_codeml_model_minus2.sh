@@ -18,9 +18,9 @@ echo outfile = /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codem
 
 # now we installed the last version of paml ;)
 # actually run CODEML
-mkdir -p /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && cd /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && /home/dmpachon/dNdS/data/paml4.9j/bin/codeml /home/dmpachon/dNdS/data/${snakemake_params[orthogroup]}_CODEML.ctl && cd -
-# get omega
+#mkdir -p /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && cd /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && /home/dmpachon/dNdS/data/paml4.9j/bin/codeml /home/dmpachon/dNdS/data/${snakemake_params[orthogroup]}_CODEML.ctl && cd -
+# get omega  code
 # get average of pairwise omega
-omega=$(grep dN/dS ../results/${snakemake_params[orthogroup]}_codeml.txt | grep -o 'dN/dS= .[0-9.]*'| awk '{sum += $2} END {print sum / NR}') > ${snakemake_output[omega]}
+omega=$(grep dN/dS ../results/${snakemake_params[orthogroup]}_codeml.txt | grep -o 'dN/dS= .[0-9.]*'| grep -v -w 99.0000 | awk '{sum += $2} END {print sum / NR}') > ${snakemake_output[omega]}
 echo $omega,${snakemake_params[orthogroup]} > ${snakemake_output[omega]}
 #grep dN/dS OG0000000_codeml_minus2.txt |  grep -o 'dN/dS= .[0-9.]*' | awk '{sum += $2} END {print sum / NR}'
