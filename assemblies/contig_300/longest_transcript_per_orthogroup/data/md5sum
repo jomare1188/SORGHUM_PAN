@@ -1,0 +1,9 @@
+229e7b9a79a994f21c588441e02be700  all.cds.fasta
+6a1a026e0ece4707a067950d39458340  all.cds_in_orthogroups.fasta
+5793650c48933dccc6526698e2680bc4  all_transcripts.fa
+2b1f384920b2078850a92afdc5b2b1b3  longest_cds.ids
+680bbf94511dbb4b34700f22e4e5f11f  longest_transcript_x_orthogroup.tbl
+7b427caab4b59659bef461fa09b5be33  Orthogroups_for_longest_cds_cogeqc2.tsv
+421e9f380b7c44859c0a01b306a9c325  Orthogroups_I2.7_cogeqc.tbl
+d58c2411d7343da66593623a3a32406b  Orthogroups_I2.7.tsv
+6873b1b86dc2131334df8344b687610f  orthogroups_with_lengths.tsv
