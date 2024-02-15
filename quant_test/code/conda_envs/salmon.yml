@@ -1,0 +1,21 @@
+name: salmon
+channels:
+  - bioconda/label/cf201901
+  - defaults
+dependencies:
+  - _libgcc_mutex=0.1=main
+  - _openmp_mutex=5.1=1_gnu
+  - bzip2=1.0.8=h7b6447c_0
+  - icu=58.2=he6710b0_3
+  - jemalloc=5.2.1=h6a678d5_6
+  - libboost=1.73.0=h28710b8_12
+  - libgcc-ng=11.2.0=h1234567_1
+  - libgomp=11.2.0=h1234567_1
+  - libstdcxx-ng=11.2.0=h1234567_1
+  - lz4-c=1.9.4=h6a678d5_0
+  - salmon=0.12.0=h86b0361_1
+  - tbb=2020.2=hff7bd54_0
+  - xz=5.2.10=h5eee18b_1
+  - zlib=1.2.13=h5eee18b_0
+  - zstd=1.5.5=hc292b87_0
+prefix: /home/j/anaconda3/envs/salmon
