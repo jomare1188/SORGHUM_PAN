@@ -12,6 +12,6 @@ do
 done
 cd ${base_dir}
 
-awk -F ',' '{if ($2 > 4) print $0}' ${base_dir}/../results/sequences_per_orthogroup.csv | cut -f1 -d, > ${base_dir}/../results/sequences_per_orthogroup_filtered4444.csv
+awk -F ',' '{if ($2 > 4) print $0}' ${base_dir}/../results/sequences_per_orthogroup.csv | cut -f1 -d, > ${base_dir}/../results/sequences_per_orthogroup_filtered4.csv
 
 sed -i ${base_dir}/../results/sequences_per_orthogroup_filtered4.csv 's/.fa//g'
