@@ -8,19 +8,10 @@ yes | cp template_CODEML.ctl ../data/${snakemake_params[orthogroup]}_CODEML.ctl
 echo seqfile = ${snakemake_input[pal2nal]} >> ../data/${snakemake_params[orthogroup]}_CODEML.ctl
 echo outfile = /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml.txt >> ../data/${snakemake_params[orthogroup]}_CODEML.ctl
 
-# paml 4.10 needs in the first line in the tree the number of species and the number of trees (? always one in this caes)
-## for some mysterious reason this does not work in snakemake, maybe bash stric mode
-#if  ![[ $(head -n 1 $tree) =~ ^[0-9] ]]; then
-#	head=$(echo $(grep -c ">" ../data/${snakemake_params[orthogroup]}.cds.fa))
-#	sed -i "1s/^/$(echo $head 1)\n/g" $tree
-#fi
-##
-
-# now we installed the last version of paml ;)
-# actually run CODEML
-#mkdir -p /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && cd /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && /home/dmpachon/dNdS/data/paml4.9j/bin/codeml /home/dmpachon/dNdS/data/${snakemake_params[orthogroup]}_CODEML.ctl && cd -
+# Actually run CODEML
+mkdir -p /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && cd /home/dmpachon/dNdS/results/${snakemake_params[orthogroup]}_codeml && /home/dmpachon/dNdS/data/paml4.9j/bin/codeml /home/dmpachon/dNdS/data/${snakemake_params[orthogroup]}_CODEML.ctl && cd -
 # get omega  code
 # get average of pairwise omega
-omega=$(grep dN/dS ../results/${snakemake_params[orthogroup]}_codeml.txt | grep -o 'dN/dS= .[0-9.]*'| grep -v -w 99.0000 | awk '{sum += $2} END {print sum / NR}') > ${snakemake_output[omega]}
+omega=$(awk -f scripts/filter.awk /Storage/data1/hellen.silva/db-extraction/dNdS/results/${snakemake_params[orthogroup]}_codeml/rst) > ${snakemake_output[omega]}
 echo $omega,${snakemake_params[orthogroup]} > ${snakemake_output[omega]}
-#grep dN/dS OG0000000_codeml_minus2.txt |  grep -o 'dN/dS= .[0-9.]*' | awk '{sum += $2} END {print sum / NR}'
+

@@ -1,7 +1,7 @@
 NR > 5 {
   if ($6 < 0.01 || $6 > 2) next;
   # Accumulate sum and count of valid values
-  sum += $6;
+  sum += $7;
   count++;
 }
 END {
