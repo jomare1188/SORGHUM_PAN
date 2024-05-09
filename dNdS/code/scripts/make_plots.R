@@ -14,7 +14,7 @@ merged_table <- full_join(omega, class_table, by = "OG")
 final <- merged_table[complete.cases(merged_table),]
 final$OG <- as.factor(final$OG)
 final$Classification <- as.factor(final$Classification)
-df <- filter(final, final$omega < 20000000000000)
+df <- filter(na.omit(final), final$omega < 20000000000000)
 
 
 # Define colores using wesanderson movie colors
