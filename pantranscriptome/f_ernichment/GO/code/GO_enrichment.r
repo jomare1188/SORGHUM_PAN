@@ -8,6 +8,7 @@ library(Rgraphviz, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 library(ggplot2, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 library(scales, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 library(clusterProfiler, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
+library(svglite, lib.loc = "/Storage/data1/jorge.munoz/NRGSC.new/libraries")
 
 
 geneID2GO <- readMappings(file = "../data/GO_formatted.txt", sep= " ")
@@ -16,7 +17,7 @@ colnames(pan_groups) <- c("Group", "Orthogroup", "id")
 pan_groups$Group <- as.factor(pan_groups$Group)
 geneNames <- pan_groups$id
 
-GO_enrichment <- function(pan_element){
+GO_enrichment <- function(pan_element, name){
 myInterestingGenes <- geneNames[pan_groups$Group==pan_element]
 geneList <- as.factor(as.integer(geneNames %in% myInterestingGenes))
 names(geneList) <- geneNames
@@ -59,16 +60,18 @@ ggdata$Lterm <- factor(ggdata$Lterm, levels = rev(ggdata$Lterm)) # fixes order
 gg1 <- ggplot(ggdata, aes(x = Lterm, y = -log10(Classic) ))+
   geom_point(size = 6, colour = "black") +
   scale_size(range = c(2.5,12.5)) +
-  xlab('GO Term') +
+  xlab('') +
   ylab('-log(p)') +
-  labs(title = 'GO Biological processes')+
+  labs(title = name)+
   theme_bw(base_size = 24) +
   coord_flip()
 ggsave(paste0("../results/", pan_element, ".png"), device = "png", width = 35, height = 30, dpi = 300, units = "cm")
+ggsave(paste0("../results/", pan_element, ".svg"), device = "svg", width = 35, height = 30, units = "cm")
 }
 
-GO_enrichment("Accessory")
-GO_enrichment("Exclusive")
-GO_enrichment("Hard-core")
-GO_enrichment("Soft-core")
+GO_enrichment("Accessory", "Accessory")
+GO_enrichment("Exclusive", "Exclusive")
+GO_enrichment("Hard-core", "Hardcore")
+GO_enrichment("Soft-core", "Softcore")
+
 

@@ -2,9 +2,9 @@
 library(seqinr)
 
 # Specify file paths
-fasta_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/longest_transcript_per_orthogroup/data/all_transcripts.fa"
-id_list_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/longest_transcript_per_orthogroup/data/longest_cds_no_p.ids"
-output_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/longest_transcript_per_orthogroup/results/transcript_of_longest_cds_per_orthogroup.fasta"
+fasta_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/proteins/all_id_ok.pep" 
+id_list_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/longest_transcript_per_orthogroup/results/ids_longest_cds_withp.txt" 
+output_file <- "/Storage/data1/jorge.munoz/SORGHUM_PAN/assemblies/contig_300/longest_transcript_per_orthogroup/results/protein_of_longest_cds_per_orthogroup.fasta"
 
 # Read the list of IDs
 id_list <- scan(id_list_file, what = character())
